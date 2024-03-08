@@ -7,28 +7,26 @@ import java.util.TimerTask;
 public class Quiz {
   Question[] q;
   String[] opStrings;
-  String ip;
   String s;
-  Timer t;
-  int i;
 
   public Quiz()
   {
     q = questions();
-    ip="";
   }
 
   public void playQuiz()
   {
     Scanner sc = new Scanner(System.in);
     opStrings = new String[q.length];
-    System.out.println("Welcome To the Quiz!!!");
-    System.out.println("You will get 10 seconds to answer the questions.\nSelect options from a,b,c,d.\nIf no option seleted within time then it will go to next question");
+    System.out.println("\n\nWelcome To the Quiz!!!");
+    System.out.println("You will get 10 seconds to answer each question.\nSelect options from a,b,c,d.\nIf no option seleted within time then it will go to next question.");
+    System.out.print("Press 1 when you are ready:");
+    sc.next();
     for(int i=0; i<q.length; i++)
     {
       System.out.println("\n"+q[i].question);
       System.out.print("Enter your option:");
-      ip = input(sc);
+      String ip = input(sc);
       if("abcd".indexOf(ip)==-1)
         opStrings[i] = "";
       else
@@ -55,7 +53,7 @@ public class Quiz {
       }
       else
       {
-        System.out.println("\nQ"+(i+1)+":\nCorrect option:"+q[i].option+", Your selected option:"+opStrings[i]+"\nYour Answer is incorrect :(");
+        System.out.println("\nQ"+(i+1)+":\nCorrect option:"+q[i].option+", Your selected option:(Did not select)\nYour Answer is incorrect :(");
       }
     }
     System.out.println("\nTotal Score:"+sum);
@@ -85,7 +83,7 @@ public class Quiz {
         }
       }
     };
-    t = new Timer();
+    Timer t = new Timer();
     t.schedule(task, 10000);
     s = sc.next().toLowerCase();
     t.cancel();
