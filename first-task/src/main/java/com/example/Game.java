@@ -47,7 +47,7 @@ public class Game {
         break;
     }
     printresult(a);
-    System.out.println("Happy Playing :)\n See you again soon!!!");
+    System.out.println("Happy Playing :)\nSee you again soon!!!");
     sc.close();
   }
 
