@@ -9,7 +9,6 @@ public class Game {
   public Game()
   {
     a = new ArrayList<>();
-    rd = new Random();
   }
 
   public void playgame()
@@ -19,6 +18,7 @@ public class Game {
     Scanner sc = new Scanner(System.in);
     while(true)
     {
+      rd = new Random();
       int r = rd.nextInt()%100;
       int score = 10;
       System.out.println("\nRound "+round+":");
