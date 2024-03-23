@@ -18,13 +18,13 @@ public class App
         {
             System.out.println("Student ID: "+s.stid+"   Student: "+s.name);
             System.out.println("Welcome to our Course Registration Program!!!");
-            
+            System.out.println("--------------------------------------------------------------------------------------------------");
+            System.out.println("List of Courses:");
+            cb.listCourses();
             int k=0;
             while(k!=1)
             {
                 System.out.println("--------------------------------------------------------------------------------------------------");
-                System.out.println("List of Courses:");
-                cb.listCourses();
                 System.out.println("1 to register for courses.\n2 to check for taken courses.\n3 to delete a taken course.\nAny other to exit system.");
                 System.out.print("Enter your choice:");
                 int i = sc.nextInt();
