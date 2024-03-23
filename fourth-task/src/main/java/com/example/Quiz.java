@@ -28,7 +28,7 @@ public class Quiz {
       System.out.print("Enter your option:");
       String ip = input(sc);
       if("abcd".indexOf(ip)==-1)
-        opStrings[i] = "";
+        opStrings[i] = "(did not select)";
       else
         opStrings[i] = ip;
       if("abcd".indexOf(ip)!=-1)
@@ -53,7 +53,7 @@ public class Quiz {
       }
       else
       {
-        System.out.println("\nQ"+(i+1)+":\nCorrect option:"+q[i].option+", Your selected option:(Did not select)\nYour Answer is incorrect :(");
+        System.out.println("\nQ"+(i+1)+":\nCorrect option:"+q[i].option+", Your selected option:"+opStrings[i]+"\nYour Answer is incorrect :(");
       }
     }
     System.out.println("\nTotal Score:"+sum);
